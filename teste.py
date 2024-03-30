@@ -1,3 +1,4 @@
+from Class.ClassesDoProjeto import Clinica, Usuario, Paciente, Funcionario, Endereco, Consultas, Recepcionista
 from PySimpleGUI import (
     Window, Image, Input, Text, Button,
     Column, VSeparator, HSeparator, Push, popup, theme, 
@@ -9,6 +10,8 @@ from MODEL3 import *
 from time import sleep
 from Class import *
 import os
+
+from janelas_interface import janela_inicial, janela_categoria, janela_cad_Pac, janela_cad_Fun, janela_criar_login, janela_perfil_pac, janela_perfil_fuc, janela_admin, janela_cad_paciente, janela_cad_funcionario, janela_dados
 
 clinica = Clinica("Sorisso", "1256289")
 
