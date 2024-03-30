@@ -4,9 +4,10 @@ from PySimpleGUI import (
     read_all_windows, Checkbox, WIN_CLOSED, Combo, Output, 
     Menu
 )
-from janelas_interface import * 
+from View import * 
 from MODEL3 import *
 from time import sleep
+from Class import *
 import os
 
 clinica = Clinica("Sorisso", "1256289")
@@ -75,11 +76,12 @@ while True:
         elif window == janela9 and event == 'EDITAR DADOS':
             popup('agora edita')
 
-        
-
-        
-               
-
+        if window == janela10 and event == 'VER DADOS':
+            popup('agora verr')
+            janela11 = janela_dados()
+        elif window == janela10 and event == 'EDITAR DADOS':
+            popup('agora edita')
+                  
     if window == janela2 and event == '< Voltar':
         janela2.hide()
         janela1.un_hide()
@@ -176,9 +178,9 @@ while True:
                 janela1.un_hide()
 
                  #TESTE
-                print (endereco)
-                print (usuario)
-                print (paciente)
+                #print (endereco)
+                #print (usuario)
+                #print (Paciente)
 
             except(usuario_ja_cadastrado_exception):
                 popup("Usuário já cadastrado! Tente Novamente!")
@@ -256,72 +258,4 @@ while True:
             print("Falta caracteres no CPF! tente novamente!")
     elif window == janela8 and event == 'Fechar': #JANELA DE CADASTRO DE FUNCIONÁRIO
         #MOVIMENTO DA JANELA
-        janela8.hide()  
-   
-        
-
-    
-
-
-
-
-
-'''
-
-import PySimpleGUI as sg
-
-
-# Criar as janelas e estilos
-def janela_login():
-    sg.theme('Reddit')
-    layout = [
-        [sg.Text('Nome')],
-        [sg.Input(key = 'nome')],
-        [sg.Button('Continuar')]
-    ]
-
-    return sg.Window('Login', layout = layout, finalize = True)
-
-def janela_pedido():
-    window,event,values = sg.read_all_windows()
-    nome = values['nome']
-
-    sg.theme('Reddit')
-    layout = [
-        [sg.Text(f'Olá {nome}')],
-        [sg.Text('Fazer Pedido')],
-        [sg.Checkbox('Pizza Pepperoni', key = 'pizza1'),
-            sg.Checkbox('Pizza Frango c/ Catupiry', key = 'pizza2')],
-        [sg.Button('Voltar'), sg.Button('Fazer Pedido')]
-
-    ]
-    return sg.Window('Montando Pedido', layout = layout, finalize = True)
-
-# Criar as janelas iniciais
-janela1, janela2 = janela_login(), None
-
-# Criar um loop de leitura de eventos
-while True:
-    window,event,values = sg.read_all_windows()
-
-    # Quando janela for fechada
-    if window == janela1 and event == sg.WIN_CLOSED:
-        break
-
-    # Quando queremos ir para próxima janela
-    if window == janela1 and event == 'Continuar':
-        janela2 = janela_pedido()
-        janela1.hide()
-       
-    if window == janela2 and event == 'Voltar':
-        janela2.hide()
-        janela1.un_hide()
-
-    if window == janela2 and event == 'Fazer Pedido':
-        if values['pizza1'] == True and values['pizza2'] == True:
-            sg.popup('Pediu as 2 pizzas')
-        elif values['pizza1'] == True:
-            sg.popup('Pediu uma pizza de Peperoni')
-        elif values['pizza2'] == True:
-            sg.popup('Pediu uma pizza de Frando c/Catupiry')
-'''
+        janela8.hide() 
