@@ -5,7 +5,7 @@ from PySimpleGUI import (
     Menu, re
 )
 import PySimpleGUI as sg
-logo = 'logo_dente.png'
+logo = './assets/logo.png'
 
 theme('Reddit')
 

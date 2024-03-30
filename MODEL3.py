@@ -1,5 +1,5 @@
 
-from Class import Funcionario, Usuario, clinica, Paciente, Endereco
+from Class import *
 
 def caracteres_cpf_erro(self, novo_usuario):
     if len(novo_usuario.cpf) < 11 or len(novo_usuario.cpf) > 11:

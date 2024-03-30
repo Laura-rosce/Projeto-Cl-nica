@@ -85,10 +85,11 @@ class Funcionario(Usuario):
         return (f"{super().__str__()}\nSALÁRIO: {self.salario}\nFUNÇÃO: {self.funcao}\n--------------")
 
 class Clinica:
-    def __init__(self, nome, cnpj):
+    def __init__(self, nome, cnpj,VerificarLogin):
         self.nome = nome
         self.cnpj = cnpj
         self.usuarios = []
+       
 
     #Verifica se existe alguém cadastrado na lista de usuarios
     def tem_usuario(self):
