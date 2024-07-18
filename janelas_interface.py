@@ -7,14 +7,14 @@ from PySimpleGUI import (
 
 theme('Reddit')
 
-logo = 'logo_dente.png'
+logo = './assets/logo_dente.png'
 estados = ['Acre','Alagoas','Amapá','Amazonas','Bahia','Ceará','Espírito Santo','Goiás','Maranhão','Mato Grosso','Mato Grosso do Sul','Minas Gerais','Pará','Paraíba','Paraná','Pernambuco','Piauí','Rio de Janeiro','Rio Grande do Norte','Rio Grande do Sul','Rondônia','Roraima','Santa Catarina','São Paulo','Sergipe','Tocantins','Distrito Federal']
 
 #JANELA1
 def janela_inicial(): #OKAY visual
 
     layout_esquerda = [
-        [Image ('dente.png')]  
+        [Image ('./assets/dente.png')]  
     ]
 
     layout_direita = [

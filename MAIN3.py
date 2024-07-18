@@ -1,7 +1,10 @@
-'''
+import os
+from time import sleep
+from MODEL3 import caracteres_cpf_exception, usuario_ja_cadastrado_exception
+from Class import Funcionario, Usuario, clinica, Paciente, Endereco
 
 while True:
-    #nÃO PRECISA PQ JÁ TEM NA INTERFACE
+    #NÃO PRECISA PQ JÁ TEM NA INTERFACE
     
     cont = 1
 
@@ -25,8 +28,7 @@ while True:
             print("APENAS NUMERO")
             sleep(1)
             os.system("cls")
-    '''
-    '''
+    
     #Apenas ADMIM pode cadastrar funcionario
     if escolha == 1:
         
@@ -49,7 +51,7 @@ while True:
             sleep(1)
             os.system('cls')
             
-        except(usuario_ja_cadastrado_exception):
+        except usuario_ja_cadastrado_exception:
             print("Usuário já cadastrado")
             sleep(1)
             os.system('cls')
@@ -58,19 +60,17 @@ while True:
             print("Falta caracteres no CPF")
             sleep(1)
             os.system('cls')
-    
             
-'''         
-#SÓ ADMIN PODERÁ EXCLUIR, EDITAR(salario e funcao do funcionario) E LISTAR 
-#TODOS PODERÃO VER SEUS PRÓPRIOS DADOS
-#PACIENTE E FUNCIONÁRIO PODERÃO EDITAR SEUS DADOS, EXCETO SALARIO E FUNÇÃO (SÓ O ADM)
-            
-        '''elif escolha == 2:
+    elif escolha == 2:
         login = input("LOGIN: ")
         senha = input("SENHA: ")
         
         verif_Pac = clinica.VerificarLogin(login, senha, Paciente)
         verif_Func = clinica.VerificarLogin(login, senha, Funcionario)
+
+        senha_admin = "admin"  # Replace "admin" with the actual password for the admin user
+
+        login_admin = "admin"  # Replace "admin" with the actual login for the admin user
 
         if verif_Pac == True:
             tipo_usuario = 1
@@ -91,7 +91,7 @@ while True:
         while login_efetuado == True:
             if tipo_usuario == 1:
                 os.system('cls')
-                '''print("""
+                print("""
 ------Bem vindo, paciente-----
     Ver seus dados.......1
     Editar seus dados....2
@@ -252,18 +252,18 @@ while True:
                             print("Cadastramento realizado com sucesso :)")
                             sleep(1)
                             
-                        except(usuario_ja_cadastrado_exception):
-                                os.system('cls')
-                                print("Usuário já cadastrado")
-                                sleep(1)
+                        except usuario_ja_cadastrado_exception:
+                            os.system('cls')
+                            print("Usuário já cadastrado")
+                            sleep(1)
 
-                        except(caracteres_cpf_exception):
-                                os.system('cls')
-                                print("Falta caracteres no CPF, tente novamente!")
-                                sleep(1)
+                        except caracteres_cpf_exception:
+                            os.system('cls')
+                            print("Falta caracteres no CPF, tente novamente!")
+                            sleep(1)
                         
                     else:
-                        print("Escolha inválida")'''
+                        print("Escolha inválida")
                             
                 elif opcao == 2:
                     print("""
@@ -349,12 +349,3 @@ while True:
                 elif opcao == 0:
                     login_efetuado = False
                     break
-            
-                    
-
-        
-
-
-        
-            
-'''
